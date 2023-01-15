@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 const GiveName = ({
   params,
   searchParams,
-}: ) => {
+} ) => {
   return (
     <div>
       My name is {params.name} && {params.isCompleted ? "true" : "false"}
