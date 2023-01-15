@@ -7,6 +7,11 @@ import React from "react";
 //   }));
 // }
 
+type Props = {
+    params?: { name?: string; isCompleted?: boolean };
+    searchParams?: { id?: string };
+}
+
 export async function generateStaticParams() {
   const url = await fetch(`https://jsonplaceholder.typicode.com/todos/`);
   const res = await url.json();
@@ -20,10 +25,7 @@ export async function generateStaticParams() {
 const GiveName = ({
   params,
   searchParams,
-}: {
-  params: { name: string; isCompleted: boolean };
-  searchParams: { id: string };
-}) => {
+}: ) => {
   return (
     <div>
       My name is {params.name} && {params.isCompleted ? "true" : "false"}
