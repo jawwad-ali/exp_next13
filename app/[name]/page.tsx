@@ -7,10 +7,10 @@ import React from "react";
 //   }));
 // }
 
-type Props = {
-    params?: { name?: string; isCompleted?: boolean };
-    searchParams?: { id?: string };
-}
+// type Props = {
+//     params?: { name?: string; isCompleted?: boolean };
+//     searchParams?: { id?: string };
+// }
 
 export async function generateStaticParams() {
   const url = await fetch(`https://jsonplaceholder.typicode.com/todos/`);
@@ -22,10 +22,7 @@ export async function generateStaticParams() {
   }));
 }
 
-const GiveName = ({
-  params,
-  searchParams,
-} ) => {
+const GiveName = ({ params, searchParams }: any) => {
   return (
     <div>
       My name is {params.name} && {params.isCompleted ? "true" : "false"}
